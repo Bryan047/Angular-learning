@@ -33,6 +33,24 @@ export class App {
     //   alert("Hello World, " + this.name)
     // }
 
-    // ================ ============
-    username="admin"
+    // ===============TwoWay binding ============
+   // username="admin"
+  //   <h1>ยินดีต้อนรับ, {{username}}</h1>
+  // <input type="text" [(ngModel)]="username">
+
+  // ===========if else==============
+    // userPermission="admin"
+    
+  //   @if(userPermission=="admin"){
+  //     <h1>Hello, admin</h1>
+  // }@else if (userPermission=="manager") {
+  //     <h1>Hello, manager</h1>
+  // }@else if (userPermission=="customer") {
+  //     <h1>Hello, customer</h1>
+  // }@else {
+  //     <h1>pleas login</h1>
+  // }
+
+    // ======== swirch case==========
+    userPermission="admin"
 }

@@ -1,2 +1,14 @@
-<h1>ยินดีต้อนรับ, {{username}}</h1>
-<input type="text" [(ngModel)]="username">
+@switch (userPermission) {
+    @case ("admin") {
+        <h1>Hello, admin</h1>
+    }
+    @case ("manager") {
+        <h1>Hello, manager</h1>
+    }
+    @case ("customer") {
+        <h1>Hello, customer</h1>
+    }
+    @default {
+        <h1>pless login</h1>
+    }
+}
