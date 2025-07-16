@@ -52,5 +52,31 @@ export class App {
   // }
 
     // ======== swirch case==========
-    userPermission="admin"
+    // userPermission="admin"
+  //   @switch (userPermission) {
+  //     @case ("admin") {
+  //         <h1>Hello, admin</h1>
+  //     }
+  //     @case ("manager") {
+  //         <h1>Hello, manager</h1>
+  //     }
+  //     @case ("customer") {
+  //         <h1>Hello, customer</h1>
+  //     }
+  //     @default {
+  //         <h1>pless login</h1>
+  //     }
+  // }
+
+  // ==============for loop ================
+      data =[
+        {id:1,name:"Bryan",salary:25000},
+        {id:2,name:"non",salary:18000},
+        {id:3,name:"nook",salary:35000},
+        {id:4,name:"danny",salary:20000}
+      ]
+
+      clearData(){
+        this.data = []
+      }
 }
