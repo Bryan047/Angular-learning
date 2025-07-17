@@ -1,4 +1,5 @@
-<h1>ข้อมูลพนักงาน</h1>
+<div [ngClass]="isActive ? 'dark':'' ">
+    <h1>ข้อมูลพนักงาน</h1>
 @for (employee of data; track employee.id){
     <h3> รหัสพนังงาน: {{employee.id}}</h3>
     <h3> ชื่อพนักงาน: {{employee.name}}</h3>
@@ -10,3 +11,8 @@
 
 <button (click)="clearData()">ล้างข้อมูล</button>
 
+<button (click)="changeMode()">
+    {{isActive ? "Light Mode": "Dark Mode"}}
+</button>
+
+</div>

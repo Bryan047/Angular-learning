@@ -1,15 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
-
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [NgClass],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
+  isActive=false
   // text interpolation expression and method
   // name="Bryan o Anal"
   // age = 20
@@ -78,5 +79,8 @@ export class App {
 
       clearData(){
         this.data = []
+      }
+      changeMode(){
+        this.isActive =!this.isActive
       }
 }

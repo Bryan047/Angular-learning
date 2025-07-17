@@ -1,0 +1,12 @@
+/* Dark mode */
+.dark{
+    background: black;
+    color:aliceblue;
+    transition: all 0.5s;
+}
+/* light mode */
+.light{
+    background: aliceblue;
+    color: black;
+    transition: all 0.9s;
+}
