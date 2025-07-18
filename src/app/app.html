@@ -1,18 +1,16 @@
-<div [ngClass]="isActive ? 'dark':'' ">
+<div>
     <h1>ข้อมูลพนักงาน</h1>
-@for (employee of data; track employee.id){
-    <h3> รหัสพนังงาน: {{employee.id}}</h3>
-    <h3> ชื่อพนักงาน: {{employee.name}}</h3>
-    <h3> เงินเดือนพนักงาน: {{employee.salary}}</h3>
+    <h2>ชื่อพนักงาน: {{fname()}}</h2>
+    <h2>นามสกุลพนักงาน: {{lname()}}</h2>
+    <h2>ประสบการทำงาน: {{exp()}}</h2>
+    <h2>ความสามารถ</h2>
+    <ul>
+    @for (item of skill(); track $index) {
+        <li>{{item}}</li>
+    }
+    </ul>
     <hr>
-}@empty {
-    <h2> ไม่มีข้อมูลพนักงานในระบบ</h2>
-}
-
-<button (click)="clearData()">ล้างข้อมูล</button>
-
-<button (click)="changeMode()">
-    {{isActive ? "Light Mode": "Dark Mode"}}
-</button>
-
+    <button (click)="change()">Switch</button>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
 </div>
