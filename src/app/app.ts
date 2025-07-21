@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
 import { LowerCasePipe, NgClass , NgStyle} from '@angular/common';
 import { UpperCasePipe ,CurrencyPipe, DatePipe} from '@angular/common';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [UpperCasePipe, LowerCasePipe, DatePipe, CurrencyPipe],
+  imports: [Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -116,22 +117,47 @@ export class App {
     
     //     <button (click)="clearData()">ล้างข้อมูล</button>
     
-// ==============signal=================
- fname=signal<string>("Non")
- lname=signal<string>("Nadum")
- exp=signal<number>(10)
- skill=signal<string[]>(["ไทย","อังกฤษ","ญี่ปุ่น"])
+// ==============signal and computed signal=================
+//  fname=signal<string>("Non")
+//  lname=signal<string>("Nadum")
+//  exp=signal<number>(10)
+//  skill=signal<string[]>(["ไทย","อังกฤษ","ญี่ปุ่น"])
 
- change(){
-    this.fname.set("นนท์")
-    this.lname.set("นะดำ")
-    this.skill.set(["Thai","english","japanese"])
- }
- increment(){
-    this.exp.update((value)=>value+1)
- }
- decrement(){
-    this.exp.update((value)=>value-1)
- }
+//   fullName = computed(()=>{
+//     return this.fname() + this.lname()
+//   })
+
+//   doubleExp = computed(()=>this.exp()*2)
+
+//  change(){
+//     this.fname.set("นนท์")
+//     this.lname.set("นะดำ")
+//     this.skill.set(["Thai","english","japanese"])
+//  }
+//  increment(){
+//     this.exp.update((value)=>value+1)
+//  }
+//  decrement(){
+//     this.exp.update((value)=>value-1)
+//  }
+// <div>
+//     <h1>ข้อมูลพนักงาน</h1>
+//     <h2>ชื่อพนักงาน: {{fullName()}}</h2>
+//     <h2>ประสบการทำงาน: {{exp()}}</h2>
+//     <h2>ประสบการทำงานx2: {{doubleExp()}}</h2>
+//     <h2>ความสามารถ</h2>
+//     <ul>
+//     @for (item of skill(); track $index) {
+//         <li>{{item}}</li>
+//     }
+//     </ul>
+//     <hr>
+//     <button (click)="change()">Switch</button>
+//     <button (click)="increment()">+</button>
+//     <button (click)="decrement()">-</button>
+// </div>
+
+// ============== components =================
+
 
 }

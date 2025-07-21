@@ -1,16 +1,1 @@
-<div>
-    <h1>ข้อมูลพนักงาน</h1>
-    <h2>ชื่อพนักงาน: {{fname()}}</h2>
-    <h2>นามสกุลพนักงาน: {{lname()}}</h2>
-    <h2>ประสบการทำงาน: {{exp()}}</h2>
-    <h2>ความสามารถ</h2>
-    <ul>
-    @for (item of skill(); track $index) {
-        <li>{{item}}</li>
-    }
-    </ul>
-    <hr>
-    <button (click)="change()">Switch</button>
-    <button (click)="increment()">+</button>
-    <button (click)="decrement()">-</button>
-</div>
+<app-header></app-header>
