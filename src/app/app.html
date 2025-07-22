@@ -1,3 +1,8 @@
 <app-header title="My App"/>
 
-<app-header myapp="MyProgram" />
+@for (emp of data; track emp.id) {
+
+    <app-item [id]="emp.id" [name]="emp.name" [salary]="emp.salary"/>
+}@empty {
+    <h2>ไม่มีข้อมูลพนักงาน</h2>
+}

@@ -4,10 +4,11 @@ import { RouterOutlet } from '@angular/router';
 import { LowerCasePipe, NgClass , NgStyle} from '@angular/common';
 import { UpperCasePipe ,CurrencyPipe, DatePipe} from '@angular/common';
 import { Header } from './header/header';
+import { Item } from './item/item';
 
 @Component({
   selector: 'app-root',
-  imports: [Header],
+  imports: [Header,Item],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -158,6 +159,15 @@ export class App {
 // </div>
 
 // ============== components =================
+// <app-header title="My App"/>
 
+// <app-header myapp="MyProgram" />
+
+///////////require components/////////
+  data=[
+    {id:1,name:"John",salary:20000},
+    {id:2,name:"Jane",salary:25000},
+    {id:3,name:"Bob",salary:30000}
+  ]
 
 }
