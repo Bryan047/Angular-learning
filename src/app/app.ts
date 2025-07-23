@@ -167,7 +167,11 @@ export class App {
   data=[
     {id:1,name:"John",salary:20000},
     {id:2,name:"Jane",salary:25000},
-    {id:3,name:"Bob",salary:30000}
+    {id:3,name:"Bob",salary:30000},
+    {id:4,name:"Rob",salary:40000}
   ]
-
+  removeDataById(id:number){
+    //alert("ข้อมูลที่ส่งมาคือ "+id)
+    this.data = this.data.filter((emp)=>emp.id !==id)
+  }
 }
