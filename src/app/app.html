@@ -1,4 +1,5 @@
 <app-header title="My App"/>
+<app-addform (onSave)="insertData($event)"/>
 
 @for (emp of data; track emp.id) {
 

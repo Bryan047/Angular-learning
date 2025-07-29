@@ -5,13 +5,22 @@ import { LowerCasePipe, NgClass , NgStyle} from '@angular/common';
 import { UpperCasePipe ,CurrencyPipe, DatePipe} from '@angular/common';
 import { Header } from './header/header';
 import { Item } from './item/item';
+import { Addform } from './addform/addform';
 
+////////////interface/////////////
+export interface Employees{
+  id : number;
+  name : string;
+  salary : number;
+}
 @Component({
   selector: 'app-root',
-  imports: [Header,Item],
+  imports: [Header,Item,Addform],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
+
 export class App {
   // isActive=false
   // color="blue"
@@ -164,14 +173,19 @@ export class App {
 // <app-header myapp="MyProgram" />
 
 ///////////require components/////////
-  data=[
+  data:Employees[]=[
     {id:1,name:"John",salary:20000},
     {id:2,name:"Jane",salary:25000},
-    {id:3,name:"Bob",salary:30000},
-    {id:4,name:"Rob",salary:40000}
+
   ]
   removeDataById(id:number){
     //alert("ข้อมูลที่ส่งมาคือ "+id)
     this.data = this.data.filter((emp)=>emp.id !==id)
+  }
+
+  insertData(emp:Employees){
+    // this.data.push(emp) //ต่ออยู่ด้านล่าง
+    this.data.unshift(emp) //ต่อขึ้นข้างบน
+
   }
 }

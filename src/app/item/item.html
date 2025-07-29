@@ -1,5 +1,5 @@
 <h2>รหัสพนักงาน : {{id()}}</h2>
 <h2>ชื่อพนักงาน : {{name()}}</h2>
-<h2>เงินเดือน : {{salary()}}</h2>
+<h2>เงินเดือน : {{salary() | currency:"฿"}}</h2>
 <button (click)="deleteItem()">ลบข้อมูล</button>
 <hr>

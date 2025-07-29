@@ -1,8 +1,9 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-item',
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './item.html',
   styleUrl: './item.css'
   
@@ -15,7 +16,7 @@ export class Item {
 
   deleteItem(){
     if(confirm(`คุณต้องการลยข้อมูลพนักงานรหัส ${this.id()} หรือไม่?`)){
-      console.log("ลบข้อมูล"+this.id())
+      // console.log("ลบข้อมูล"+this.id())
       this.onDelete.emit(this.id())//ส่งสัญญาณ ปล่ยอ Event
     }
   }
